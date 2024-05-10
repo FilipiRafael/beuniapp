@@ -1,12 +1,11 @@
 "use client";
 
-import { useEffect, useState, useLayoutEffect, useContext } from "react";
+import { useEffect, useState, useLayoutEffect } from "react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 import { Navbar } from "@/components/navbar";
 import { Breadcrumb } from "@/components/breadcrumb";
-import { AuthContext } from "@/contexts/auth";
 
 type ProductProps = {
   public_id: string;
@@ -23,7 +22,6 @@ export default function Product({
 }: {
   searchParams: { id: string };
 }) {
-  const { isAuth } = useContext(AuthContext);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [product, setProduct] = useState<ProductProps | null>(null);
 
@@ -43,8 +41,8 @@ export default function Product({
   }, []);
 
   useLayoutEffect(() => {
-    if (!searchParams.id || !isAuth) redirect("/auth/login");
-  }, [isAuth, searchParams.id]);
+    if (!searchParams.id) redirect("/dashboard");
+  }, [searchParams.id]);
 
   if (isLoading)
     return (
