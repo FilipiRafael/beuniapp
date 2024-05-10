@@ -42,7 +42,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     getProducts();
-  }, [products]);
+  }, [searchString]);
 
   return (
     <div className="min-h-full">
