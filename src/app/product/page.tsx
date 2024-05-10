@@ -40,10 +40,6 @@ export default function Product({
     getProduct();
   }, []);
 
-  useLayoutEffect(() => {
-    if (!searchParams.id) redirect("/dashboard");
-  }, [searchParams.id]);
-
   if (isLoading)
     return (
       <div className="flex flex-1 h-full justify-center items-center">
