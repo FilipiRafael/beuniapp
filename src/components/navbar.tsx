@@ -89,6 +89,7 @@ export const Navbar = () => {
                   <button
                     type="button"
                     className="relative rounded-full bg-white p-1 text-gray-500"
+                    onClick={logout}
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">Logout</span>
