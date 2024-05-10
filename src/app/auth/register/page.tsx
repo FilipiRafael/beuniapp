@@ -59,7 +59,7 @@ export default function Register() {
           priority={false}
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
-          Create an account
+          Criar conta
         </h2>
       </div>
 
@@ -70,7 +70,7 @@ export default function Register() {
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
             >
-              Email address
+              E-mail
             </label>
             <div className="mt-2">
               <input
@@ -91,7 +91,7 @@ export default function Register() {
               htmlFor="password"
               className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
             >
-              Password
+              Senha
             </label>
             <div className="mt-2">
               <input
@@ -113,7 +113,7 @@ export default function Register() {
               htmlFor="confirmPassword"
               className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
             >
-              Confirm password
+              Confirmar senha
             </label>
             <div className="mt-2">
               <input
@@ -159,18 +159,18 @@ export default function Register() {
                   />
                 </svg>
               )}
-              Create an account
+              Criar conta
             </button>
           </div>
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-100">
-          Already have an account?{" "}
+          Já tem uma conta?{" "}
           <Link
             href="/auth/login"
             className="font-semibold leading-6 text-orange-500 hover:text-orange-500"
           >
-            Login here
+            Fazer login
           </Link>
         </p>
       </div>

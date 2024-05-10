@@ -61,7 +61,7 @@ export default function Dashboard() {
       <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
         <div className="w-full">
           <label htmlFor="simple-search" className="sr-only">
-            Search
+            Pesquisar
           </label>
           <div className="relative w-full d-flex flex-row">
             <input

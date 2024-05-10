@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, FormEvent, useContext } from "react";
+import { useState, FormEvent, useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -78,7 +78,7 @@ export default function Login() {
           priority={false}
         />
         <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
-          Sign in to your account
+          Login
         </h2>
       </div>
 
@@ -89,7 +89,7 @@ export default function Login() {
               htmlFor="email"
               className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
             >
-              Email address
+              E-mail
             </label>
             <div className="mt-2">
               <input
@@ -111,7 +111,7 @@ export default function Login() {
                 htmlFor="password"
                 className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-100"
               >
-                Password
+                Senha
               </label>
             </div>
             <div className="mt-2">
@@ -153,18 +153,18 @@ export default function Login() {
                   />
                 </svg>
               )}
-              Sign in
+              Logar
             </button>
           </div>
         </form>
 
         <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-100">
-          Not a member?{" "}
+          Ainda não tem uma conta?{" "}
           <Link
             href="/auth/register"
             className="font-semibold leading-6 text-orange-500 hover:text-orange-500"
           >
-            Sign Up here
+            Criar conta aqui
           </Link>
         </p>
       </div>
