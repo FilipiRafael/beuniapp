@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState, useLayoutEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { redirect } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 import { Navbar } from "@/components/navbar";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -17,16 +17,15 @@ type ProductProps = {
   id: string;
 };
 
-export default function Product({
-  searchParams,
-}: {
-  searchParams: { id: string };
-}) {
+export default function Product() {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [product, setProduct] = useState<ProductProps | null>(null);
+  const searchParams = useSearchParams();
+
+  const id = searchParams.get("id");
 
   const getProduct = async () => {
-    const response = await beUniApi.get(`/products/${searchParams.id}`, {
+    const response = await beUniApi.get(`/products/${id}`, {
       headers: {
         Authorization: `Bearer ${beUniApiKey}`,
       },
