@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { beUniApi, beUniApiKey } from "@/services/beUniApi";
@@ -63,69 +62,67 @@ export default function Product() {
     );
 
   return (
-    <Suspense>
-      <div className="min-h-full">
-        <Navbar />
+    <div className="min-h-full">
+      <Navbar />
 
-        <Breadcrumb oldPage="Catálogo" newPage={product?.public_id as string} />
+      <Breadcrumb oldPage="Catálogo" newPage={product?.public_id as string} />
 
-        <header className="mt-5 bg-white">
-          <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-900">
-              {product?.public_id}
-            </h1>
-            <p className="mt-3 w-full md:w-10/12 text-lg tracking-tight text-gray-500">
-              {product?.description}
-            </p>
-          </div>
-        </header>
-        <main>
-          <div className="bg-white">
-            <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
-              <div className="aspect-h-4 aspect-w-3 overflow-hidden rounded-lg mx-3">
-                {product?.image_url && product?.public_id && (
-                  <Image
-                    src={product?.image_url}
-                    alt={product?.public_id}
-                    className="h-96 w-full object-cover object-center"
-                    width={0}
-                    height={0}
-                    unoptimized
-                    priority={false}
-                  />
-                )}
-              </div>
-            </div>
-
-            <div className="mx-auto md:ml-28 lg:ml-28 max-w-2xl px-4 pb-16 pt-10">
-              <div>
-                <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-                  {product?.public_id}
-                </h1>
-                <p className="text-3xl tracking-tight text-gray-900">
-                  {product?.price?.toLocaleString("pt-BR", {
-                    style: "currency",
-                    currency: "BRL",
-                  })}
-                </p>
-                <p className="text-gray-700 mt-10 md:mt-3 lg:mt-3">
-                  Estoque: {product?.stock}
-                </p>
-              </div>
-
-              <div className="mt-4 lg:row-span-3 lg:mt-0">
-                <h2 className="sr-only">Informações do produto</h2>
-                <button
-                  type="button"
-                  className="flex w-full md:w-1/2 lg:w-1/2 md:mt-10 lg:mt-10 items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                >
-                  Adicionar ao carrinho
-                </button>
-              </div>
+      <header className="mt-5 bg-white">
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-900">
+            {product?.public_id}
+          </h1>
+          <p className="mt-3 w-full md:w-10/12 text-lg tracking-tight text-gray-500">
+            {product?.description}
+          </p>
+        </div>
+      </header>
+      <main>
+        <div className="bg-white">
+          <div className="mx-auto mt-6 max-w-2xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-3 lg:gap-x-8 lg:px-8">
+            <div className="aspect-h-4 aspect-w-3 overflow-hidden rounded-lg mx-3">
+              {product?.image_url && product?.public_id && (
+                <Image
+                  src={product?.image_url}
+                  alt={product?.public_id}
+                  className="h-96 w-full object-cover object-center"
+                  width={0}
+                  height={0}
+                  unoptimized
+                  priority={false}
+                />
+              )}
             </div>
           </div>
-        </main>
-      </div>
-    </Suspense>
+
+          <div className="mx-auto md:ml-28 lg:ml-28 max-w-2xl px-4 pb-16 pt-10">
+            <div>
+              <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+                {product?.public_id}
+              </h1>
+              <p className="text-3xl tracking-tight text-gray-900">
+                {product?.price?.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </p>
+              <p className="text-gray-700 mt-10 md:mt-3 lg:mt-3">
+                Estoque: {product?.stock}
+              </p>
+            </div>
+
+            <div className="mt-4 lg:row-span-3 lg:mt-0">
+              <h2 className="sr-only">Informações do produto</h2>
+              <button
+                type="button"
+                className="flex w-full md:w-1/2 lg:w-1/2 md:mt-10 lg:mt-10 items-center justify-center rounded-md border border-transparent bg-orange-500 px-8 py-3 text-base font-medium text-white hover:bg-orange-600 outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+              >
+                Adicionar ao carrinho
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
   );
 }

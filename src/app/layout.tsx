@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -29,7 +30,9 @@ export default function RootLayout({
         )}
         suppressHydrationWarning={true}
       >
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <Suspense>{children}</Suspense>
+        </AuthProvider>
       </body>
     </html>
   );
