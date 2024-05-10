@@ -1,8 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useContext, useState, useEffect } from "react";
-import { AuthContext } from "@/contexts/auth";
-import { redirect, useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 import { Navbar } from "@/components/navbar";
 import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 import { Product } from "@/components/product";
@@ -24,8 +22,6 @@ type ProductsProps = {
 };
 
 export default function Dashboard() {
-  const { isAuth } = useContext(AuthContext);
-  const router = useRouter();
   const [products, setProducts] = useState<ProductsProps[] | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [searchString, setSearchString] = useState<string>("");
@@ -47,10 +43,6 @@ export default function Dashboard() {
   useEffect(() => {
     getProducts();
   }, [products]);
-
-  useLayoutEffect(() => {
-    if (!isAuth) redirect("/auth/login");
-  }, [isAuth]);
 
   return (
     <div className="min-h-full">
