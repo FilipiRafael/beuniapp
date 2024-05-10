@@ -10,6 +10,7 @@ import {
   ServerIcon,
 } from "@heroicons/react/20/solid";
 import beUniLogo from "@/assets/beunilogo.png";
+import { InstagramEmbed } from "react-social-media-embed";
 
 const navigation = [
   { name: "Plataforma", href: "#" },
@@ -173,13 +174,13 @@ export default function Home() {
                 href="/auth/login"
                 className="rounded-md bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
               >
-                Conhecer o catálogo
+                Ver o catálogo
               </a>
               <a
                 href="#"
                 className="text-sm font-semibold leading-6 text-gray-900"
               >
-                Assistir à demonstração <span aria-hidden="true">→</span>
+                Ver demo <span aria-hidden="true">→</span>
               </a>
             </div>
           </div>
@@ -253,7 +254,8 @@ export default function Home() {
                   Tudo sob medida para você
                 </p>
                 <p className="mt-6 text-lg leading-8 text-gray-600">
-                  Após a seleção iremos preparar os seus mockups e enviar o seu orçamento. Depois é apenas aproveitar os seguintes benefícios.{" "}
+                  Após a seleção iremos preparar os seus mockups e enviar o seu
+                  orçamento. Depois é apenas aproveitar os seguintes benefícios.{" "}
                 </p>
                 <dl className="mt-10 max-w-xl space-y-8 text-base leading-7 text-gray-600 lg:max-w-none">
                   {features.map((feature) => (
@@ -265,7 +267,7 @@ export default function Home() {
                         />
                         {feature.name}
                       </dt>{" "}
-                      <br/>
+                      <br />
                       <dd className="inline">{feature.description}</dd>
                     </div>
                   ))}
@@ -280,6 +282,63 @@ export default function Home() {
               height={1442}
             />
           </div>
+        </div>
+      </div>
+      <div className="absolute w-full bg-white py-24 sm:py-32">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl lg:mx-0">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Publicações recentes
+            </h2>
+            <p className="mt-2 text-lg leading-8 text-gray-600">
+              Confira nossas últimas publicações nas redes sociais e acompanhe o
+              que estamos fazendo.
+            </p>
+          </div>
+        </div>
+        <div
+          className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style={{
+              clipPath:
+                "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+            }}
+          />
+        </div>
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-10 md:px-10 mt-10 grid grid-cols-1 gap-y-5 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-3">
+          <InstagramEmbed
+            url="https://www.instagram.com/p/CsrWKyagrEJ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
+          <InstagramEmbed
+            url="https://www.instagram.com/p/C5tLZTZAKuU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
+          <InstagramEmbed
+            url="https://www.instagram.com/p/C5q6yD1gCOo/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
+          <InstagramEmbed
+            url="https://www.instagram.com/p/C50xSY1AqHR/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
+          <InstagramEmbed
+            url="https://www.instagram.com/p/CoK2ZIhPPA2/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
+          <InstagramEmbed
+            url="https://www.instagram.com/p/CnXcxeQP5nV/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            width={328}
+            linkText="Ver no Instagram"
+          />
         </div>
       </div>
     </div>
