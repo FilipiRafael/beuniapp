@@ -1,5 +1,7 @@
 # BeUni Tecnologia 🧡
 
+![Mobile_Mockup_3 1](https://github.com/FilipiRafael/beuniapp/assets/61629642/5b10cb40-c22d-4c7b-9961-c29783462880)
+![MacBook #01](https://github.com/FilipiRafael/beuniapp/assets/61629642/48fbfb19-00d5-4feb-a382-a66f754a1092)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
