@@ -30,6 +30,9 @@ export default function Register() {
         username: email,
         email,
         password,
+        headers: {
+          Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+        },
       })
       .then((response) => {
         if (response.data) {

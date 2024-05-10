@@ -38,6 +38,9 @@ export default function Login() {
       .post("/auth/local", {
         identifier: email,
         password: password,
+        headers: {
+          Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+        },
       })
       .then((response) => {
         if (response.data?.user?.email && response.data?.user?.id) {
