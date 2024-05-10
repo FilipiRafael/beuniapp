@@ -4,7 +4,7 @@ import { useLayoutEffect, useContext, useState, useEffect } from "react";
 import { AuthContext } from "@/contexts/auth";
 import { redirect, useRouter } from "next/navigation";
 import { Navbar } from "@/components/navbar";
-import { beUniApi } from "@/services/beUniApi";
+import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 import { Product } from "@/components/product";
 
 type ProductsProps = {
@@ -35,7 +35,7 @@ export default function Dashboard() {
       `/products?filters[public_id][$contains]=${searchString}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+          Authorization: `Bearer ${beUniApiKey}`,
         },
       },
     );

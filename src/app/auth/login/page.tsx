@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import beUniLogo from "@/assets/beunilogo.png";
 import { AuthContext, UserProps } from "@/contexts/auth";
-import { beUniApi } from "@/services/beUniApi";
+import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 
 export default function Login() {
   const [email, setEmail] = useState<string>("");
@@ -39,7 +39,7 @@ export default function Login() {
         identifier: email,
         password: password,
         headers: {
-          Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+          Authorization: `Bearer ${beUniApiKey}`,
         },
       })
       .then((response) => {

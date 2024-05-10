@@ -3,7 +3,7 @@
 import { useEffect, useState, useLayoutEffect, useContext } from "react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
-import { beUniApi } from "@/services/beUniApi";
+import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 import { Navbar } from "@/components/navbar";
 import { Breadcrumb } from "@/components/breadcrumb";
 import { AuthContext } from "@/contexts/auth";
@@ -30,7 +30,7 @@ export default function Product({
   const getProduct = async () => {
     const response = await beUniApi.get(`/products/${searchParams.id}`, {
       headers: {
-        Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+        Authorization: `Bearer ${beUniApiKey}`,
       },
     });
 

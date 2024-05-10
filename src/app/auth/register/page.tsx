@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import beUniLogo from "@/assets/beunilogo.png";
-import { beUniApi } from "@/services/beUniApi";
+import { beUniApi, beUniApiKey } from "@/services/beUniApi";
 
 export default function Register() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -31,7 +31,7 @@ export default function Register() {
         email,
         password,
         headers: {
-          Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
+          Authorization: `Bearer ${beUniApiKey}`,
         },
       })
       .then((response) => {
