@@ -30,7 +30,7 @@ export default function Product({
   const getProduct = async () => {
     const response = await beUniApi.get(`/products/${searchParams.id}`, {
       headers: {
-        Authorization: `Bearer eebde8ac830565995a0a1686232be8f6375f5c1c4031578f6ab1dc8548118eefbad045be7be38a08f11443219021acf8721bb674869d36194e4d16b1f66a3edea4b68ce85cc224c2850f21aafedaa42d3f3617ea3783168ea3e26b04cf24ebbbc39a7244513eec6fe9f61b2783649b0752ae0ac7007327dc7c21faeba6834664`,
+        Authorization: `Bearer ${process.env.BEUNI_API_KEY}`,
       },
     });
 
